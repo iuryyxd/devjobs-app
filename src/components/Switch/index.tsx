@@ -12,7 +12,7 @@ export function Switch() {
     <div className={styles.switch}>
       <img src={ISun} alt="Sun icon" />
       <button
-        className={`${styles.switch__button} ${styles[theme]}`}
+        className={`${styles.switch__button} ${theme && styles[theme]}`}
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       >
         <div />
