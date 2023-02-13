@@ -26,8 +26,8 @@
 
     &::before {
       content: "";
-      width: 14px;
-      height: 14px;
+      min-width: 14px;
+      min-height: 14px;
       transform: scale(0);
       transition: 120ms transform ease-in-out;
       box-shadow: inset 1rem 1rem var(--color-violet);

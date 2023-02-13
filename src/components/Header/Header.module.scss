@@ -36,3 +36,11 @@
     }
   }
 }
+
+@media screen and (max-width: 1242px) {
+  .header {
+    &__container {
+      max-width: 80%;
+    }
+  }
+}

@@ -6,7 +6,6 @@
 
   position: absolute;
   bottom: -30px;
-  padding-inline: 2rem 1rem;
 
   display: flex;
   align-items: center;
@@ -17,6 +16,8 @@
     display: flex;
     align-items: center;
     gap: 19px;
+
+    margin-left: 2rem;
 
     input {
       width: 100%;
@@ -57,6 +58,7 @@
     gap: 24px;
 
     padding-left: 1rem;
+    margin-right: 1rem;
 
     button {
       width: 140px;
@@ -74,6 +76,39 @@
       &:hover {
         opacity: 0.8;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 894px) {
+  .form {
+    img {
+      width: 15px;
+    }
+
+    &__filterTitle,
+    &__filterLocation {
+      gap: 10px;
+    }
+
+    &__filterCheckbox {
+      button {
+        width: 90px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 802px) {
+  .form {
+    &__filterTitle {
+      img {
+        display: none;
+      }
+    }
+
+    &__filterLocation {
+      display: none;
     }
   }
 }
