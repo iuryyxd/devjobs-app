@@ -1,3 +1,21 @@
-.a {
-    color: var(--color-text);
+.jobslist {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  padding-bottom: 50px;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    position: relative;
+
+    max-width: 1209px;
+    width: 100%;
+    margin-top: 7.1875rem;
+
+    row-gap: 4.0625rem;
+  }
 }
