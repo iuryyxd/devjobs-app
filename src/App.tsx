@@ -11,7 +11,7 @@ export interface filtersType {
 }
 
 export default function App() {
-  const [theme, setTheme] = useState<string>("light");
+  const [theme, setTheme] = useState<string | null>(null);
   const [filter, setFilter] = useState<filtersType>({
     title: "",
     location: "",
@@ -22,12 +22,23 @@ export default function App() {
     document.body.style.background = theme === "dark" ? "#121721" : "#f4f6f8";
   }, [theme]);
 
+  useEffect(() => {
+    setTheme(
+      window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+    );
+  }, []);
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <FilterContext.Provider value={{ filter, setFilter }}>
-        <div data-theme={theme} className="app">
-          <Routes />
-        </div>
+        {theme && (
+          <div data-theme={theme} className="app">
+            <Routes />
+          </div>
+        )}
       </FilterContext.Provider>
     </ThemeContext.Provider>
   );

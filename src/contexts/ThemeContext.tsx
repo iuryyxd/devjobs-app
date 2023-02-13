@@ -1,12 +1,12 @@
 import { createContext } from "react";
 
 interface ThemeContextType {
-  theme: string;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
+  theme: string | null;
+  setTheme: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const iThemeContextState = {
-  theme: "light",
+  theme: null,
   setTheme: () => {},
 };
 
