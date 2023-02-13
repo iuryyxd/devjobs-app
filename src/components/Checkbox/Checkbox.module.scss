@@ -1,0 +1,42 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--color-text);
+  }
+
+  input {
+    appearance: none;
+    margin: 0;
+    font: inherit;
+
+    width: 24px;
+    height: 24px;
+    background: var(--color-checkbox);
+    border-radius: 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1rem 1rem var(--color-violet);
+      transform-origin: bottom left;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+  }
+}

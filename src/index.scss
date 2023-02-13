@@ -1,5 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap");
 
+:root {
+  --color-violet: #5964e0;
+  --color-light-violet: #939bf4;
+  --color-very-dark-blue: #19202d;
+  --color-midnight: #121721;
+  --color-white: #fff;
+  --color-light-grey: #f4f6f8;
+  --color-grey: #9daec2;
+  --color-dark-grey: #6e8098;
+
+  --background-color: var(--color-light-grey);
+  --background-color-elements: var(--color-white);
+  --color-text: var(--color-very-dark-blue);
+  --color-checkbox: #e7e8e9;
+  --background-color-btn: #eeeffc;
+  --background-color-btn-hover: #c5c9f4;
+  --color-btn: var(--color-violet);
+}
+
+[data-theme="dark"] {
+  --background-color: var(--color-midnight);
+  --background-color-elements: var(--color-very-dark-blue);
+  --color-text: var(--color-white);
+  --color-checkbox: #313743;
+  --background-color-btn: #303642;
+  --background-color-btn-hover: #696e76;
+  --color-btn: var(--color-white);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,37 +54,16 @@ ol {
   list-style: none;
 }
 
-:root {
-  --color-violet: #5964e0;
-  --color-light-violet: #939bf4;
-  --color-very-dark-blue: #19202d;
-  --color-midnight: #121721;
-  --color-white: #fff;
-  --color-light-grey: #f4f6f8;
-  --color-grey: #9daec2;
-  --color-dark-grey: #6e8098;
-}
-
-#root[data-theme="light"] {
-  --background-color-app: var(--color-light-grey);
-  --background-color-elements: var(--color-white);
-  --color-text: var(--color-very-dark-blue);
-  --color-checkbox: #e7e8e9;
-  --background-color-btn-2: #eeeffc;
-  --background-color-btn-2-hover: #c5c9f4;
-  --color-btn-2: var(--color-violet);
-}
-
-#root[data-theme="dark"] {
-  --background-color-app: var(--color-midnight);
-  --background-color-elements: var(--color-very-dark-blue);
-  --color-text: var(--color-white);
-  --color-checkbox: #313743;
-  --background-color-btn-2: #303642;
-  --background-color-btn-2-hover: #696e76;
-  --color-btn-2: var(--color-white);
+.app {
+  width: 100%;
+  height: 100vh;
+  background: var(--background-color);
 }
 
 body {
   font-family: "Kumbh Sans", sans-serif;
+}
+
+::placeholder {
+  color: #8C8F96;
 }

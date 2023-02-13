@@ -1,0 +1,79 @@
+.form {
+  width: 100%;
+  height: 5rem;
+  background: var(--background-color-elements);
+  border-radius: 6px;
+
+  position: absolute;
+  bottom: -30px;
+  padding-inline: 2rem 1rem;
+
+  display: flex;
+  align-items: center;
+
+  &__filterTitle {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 19px;
+
+    input {
+      width: 100%;
+      font-weight: 400;
+      font-size: 16px;
+      background: none;
+
+      color: var(--color-text);
+    }
+  }
+
+  &__filterLocation {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    height: 100%;
+
+    border-left: 1px solid rgba(110, 128, 152, 0.2);
+    border-right: 1px solid rgba(110, 128, 152, 0.2);
+
+    padding-inline: 1.5rem;
+
+    input {
+      width: 100%;
+      font-weight: 400;
+      font-size: 16px;
+      background: none;
+
+      color: var(--color-text);
+    }
+  }
+
+  &__filterCheckbox {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    padding-left: 1rem;
+
+    button {
+      width: 140px;
+      height: 52px;
+
+      background: var(--color-violet);
+      border-radius: 5px;
+
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--color-white);
+
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
