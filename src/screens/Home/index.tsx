@@ -7,53 +7,48 @@ import { Jobcard } from "../../components/Jobcard";
 import { FilterContext } from "../../contexts/FilterContext";
 
 export function Home() {
-  const [limit, setLimit] = useState<number>(9);
-
   const { filter } = useContext(FilterContext);
 
-  // terminar a parte do filtro
-  const jobsFilter =
-    filter.location.trim() !== "" || filter.title.trim() !== ""
-      ? jobsList.filter((job) => {
-          //   if (
-          //     (filter.title.trim() !== "" &&
-          //       job.company
-          //         .toLowerCase()
-          //         .concat(job.position.toLowerCase())
-          //         .includes(filter.title.toLowerCase())) ||
-          //     (filter.location.trim() !== "" &&
-          //       job.location
-          //         .toLowerCase()
-          //         .includes(filter.location.toLowerCase()))
-          //   ) {
-          //     return job;
-          //   }
+  const jobsFilter = jobsList.filter((job) => {
+    const jobTitle = job.company
+      .toLowerCase()
+      .concat(job.position.toLowerCase());
 
-          if (filter.fullTime && job.contract === "Full Time") return job;
-        })
-      : jobsList;
+    if (filter.fullTime) {
+      return (
+        jobTitle.includes(filter.title.toLowerCase()) &&
+        job.location.toLowerCase().includes(filter.location.toLowerCase()) &&
+        job.contract === "Full Time"
+      );
+    } else {
+      return (
+        jobTitle.includes(filter.title.toLowerCase()) &&
+        job.location.toLowerCase().includes(filter.location.toLowerCase())
+      );
+    }
+  });
 
   return (
-    <main className={styles.jobslist}>
+    <main
+      className={styles.jobslist}
+      style={{ height: jobsFilter.length === 15 ? "100%" : "100vh" }}
+    >
       <div className={styles.jobslist__container}>
         {jobsFilter.map((job, index) => (
           <>
-            {index < limit && (
-              <Jobcard
-                key={crypto.randomUUID()}
-                company={job.company}
-                contract={job.contract}
-                location={job.location}
-                logo={job.logo}
-                logoBackground={job.logoBackground}
-                position={job.position}
-                postedAt={job.postedAt}
-                id={job.id}
-              />
-            )}
+            <Jobcard
+              key={crypto.randomUUID()}
+              company={job.company}
+              contract={job.contract}
+              location={job.location}
+              logo={job.logo}
+              logoBackground={job.logoBackground}
+              position={job.position}
+              postedAt={job.postedAt}
+              id={job.id}
+            />
           </>
         ))}
-        {limit === 9 && <button onClick={() => setLimit(12)}>Load More</button>}
       </div>
     </main>
   );
