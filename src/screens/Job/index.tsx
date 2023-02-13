@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import { jobsList } from "../../utils/jobs";
 import styles from "./Job.module.scss";
 
+import { EmptyPage } from "../../components/EmptyPage";
+
 interface JobType {
   company: string;
   logo: string;
@@ -115,7 +117,7 @@ export function Job() {
           </footer>
         </main>
       ) : (
-        <p>nada aq</p>
+        <EmptyPage jobDetails />
       )}
     </>
   );

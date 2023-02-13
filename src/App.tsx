@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FilterContext } from "./contexts/FilterContext";
 import { ThemeContext } from "./contexts/ThemeContext";
 
@@ -17,6 +17,10 @@ export default function App() {
     location: "",
     fullTime: false,
   });
+
+  useEffect(() => {
+    document.body.style.background = theme === "dark" ? "#121721" : "#f4f6f8";
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
