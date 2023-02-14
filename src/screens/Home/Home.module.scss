@@ -2,6 +2,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 50px;
 
   padding-bottom: 50px;
 
@@ -17,20 +21,20 @@
     margin-top: 7.1875rem;
 
     row-gap: 4.0625rem;
+  }
 
-    button {
-      margin: 0 auto;
+  button {
+    margin: 0 auto;
 
-      width: 140px;
-      height: 52px;
-      background: var(--color-violet);
-      border-radius: 5px;
+    width: 140px;
+    height: 52px;
+    background: var(--color-violet);
+    border-radius: 5px;
 
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-      color: var(--color-white);
-    }
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--color-white);
   }
 }
 
@@ -51,4 +55,3 @@
     }
   }
 }
-

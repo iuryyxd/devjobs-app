@@ -58,11 +58,11 @@ export function Home() {
         ) : (
           <EmptyPage jobDetails />
         )}
-
-        {limitLength === 9 && jobsFilter.length === 15 && (
-          <button onClick={() => setLimitLength(12)}>Load More</button>
-        )}
       </div>
+
+      {limitLength === 9 && jobsFilter.length === 15 && (
+        <button onClick={() => setLimitLength(12)}>Load More</button>
+      )}
     </main>
   );
 }
