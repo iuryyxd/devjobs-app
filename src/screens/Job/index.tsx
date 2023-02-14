@@ -104,6 +104,19 @@ export function Job() {
             </div>
           </section>
 
+          <section className={styles.details__apply}>
+            <div className={styles.apply__container}>
+              <h3>How to Apply</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Doloremque facilis nihil repudiandae odit quos consequatur, nemo
+                sint aliquid earum. Explicabo neque voluptate fuga quis possimus
+                repudiandae molestias numquam obcaecati! Dolor.
+              </p>
+              <a href={job.apply}>{job.apply}</a>
+            </div>
+          </section>
+
           <footer className={styles.details__footer}>
             <div className={styles.footer__container}>
               <div>
