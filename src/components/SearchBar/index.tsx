@@ -1,4 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import styles from "./SearchBar.module.scss";
 import ISearch from "/assets/desktop/icon-search.svg";
@@ -15,7 +16,7 @@ export function SearchBar() {
   const [fullTime, setFullTime] = useState<boolean>(false);
   const [openModalFilter, setOpenModalFilter] = useState<boolean>(false);
 
-  const { filter, setFilter } = useContext(FilterContext);
+  const { setFilter } = useContext(FilterContext);
 
   function handleSearchFilter(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -73,14 +74,16 @@ export function SearchBar() {
         </button>
       </div>
 
-      {openModalFilter && (
-        <FilterModal
-          setFullTime={setFullTime}
-          fullTime={fullTime}
-          setLocation={setLocation}
-          location={location}
-        />
-      )}
+      <AnimatePresence mode="wait">
+        {openModalFilter && (
+          <FilterModal
+            setFullTime={setFullTime}
+            fullTime={fullTime}
+            setLocation={setLocation}
+            location={location}
+          />
+        )}
+      </AnimatePresence>
     </form>
   );
 }

@@ -1,5 +1,6 @@
-import { Checkbox } from "../Checkbox";
+import { motion } from "framer-motion";
 
+import { Checkbox } from "../Checkbox";
 import styles from "./FilterModal.module.scss";
 
 interface FilterModalProps {
@@ -9,9 +10,20 @@ interface FilterModalProps {
   fullTime: boolean;
 }
 
-export function FilterModal({ setFullTime, setLocation, fullTime, location }: FilterModalProps) {
+export function FilterModal({
+  setFullTime,
+  setLocation,
+  fullTime,
+  location,
+}: FilterModalProps) {
   return (
-    <div className={styles.modal}>
+    <motion.div
+      className={styles.modal}
+      initial={{ opacity: 0, y: 90 }}
+      animate={{ opacity: 1, y: 110 }}
+      exit={{ opacity: 0, y: 90 }}
+      transition={{ duration: 0.5 }}
+    >
       <input
         type="text"
         onChange={(e) => setLocation(e.target.value)}
@@ -19,6 +31,6 @@ export function FilterModal({ setFullTime, setLocation, fullTime, location }: Fi
         value={location}
       />
       <Checkbox setFullTime={setFullTime} fullTime={fullTime} />
-    </div>
+    </motion.div>
   );
 }
