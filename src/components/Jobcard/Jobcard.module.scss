@@ -72,3 +72,10 @@
     color: var(--color-violet);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .card {
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
